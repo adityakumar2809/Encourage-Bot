@@ -74,4 +74,10 @@ async def on_message(message):
       encouragements = db['encouragements']
     await message.channel.send(encouragements)
 
+  if msg.startswith('$list'):
+    encouragements = []
+    if 'encouragements' in db.keys():
+      encouragements = db['encouragements']
+    await message.channel.send(encouragements)
+
 client.run(os.getenv('TOKEN'))
